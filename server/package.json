@@ -4,7 +4,10 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "seed": "ts-node prisma/seed.ts"
+    "seed": "ts-node prisma/seed.ts",
+    "build": "rimraf dist && npx tsc",
+    "start": "npm run build && node dist/index.js",
+    "dev": "npm run build && concurrently \"npx tsc -w\" \"nodemon --exec ts-node src/index.ts\""
   },
   "keywords": [],
   "author": "",
@@ -20,6 +23,7 @@
     "helmet": "^7.1.0",
     "morgan": "^1.10.0",
     "prisma": "^5.18.0",
+    "rimraf": "^6.0.1",
     "server": "file:"
   },
   "devDependencies": {
