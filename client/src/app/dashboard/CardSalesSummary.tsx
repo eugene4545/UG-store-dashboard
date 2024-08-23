@@ -3,8 +3,9 @@ import React from 'react'
 type Props = {}
 
 const CardSalesSummary = (props: Props) => {
+  
   return (
-    <div>CardSalesSummary</div>
+    <div className="row-span-3 xl:row-span-6 bg-gray-500">CardSalesSummary</div>
   )
 }
 
