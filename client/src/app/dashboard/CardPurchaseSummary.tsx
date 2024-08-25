@@ -6,7 +6,7 @@ import {
   Area,
   AreaChart,
   ResponsiveContainer,
-  Tooltip,
+  Tooltip, 
   XAxis,
   YAxis,
 } from "recharts";
@@ -19,7 +19,7 @@ const CardPurchaseSummary = () => {
 
  
 
-  return (
+  return ( 
     <div className="flex flex-col justify-between row-span-2 xl:row-span-3 col-span-1 md:col-span-2 xl:col-span-1 bg-white shadow-md rounded-2xl">
       {isLoading ? (
         <div className="m-5">Loading...</div>
@@ -27,9 +27,10 @@ const CardPurchaseSummary = () => {
         <>
           {/* HEADER */}
           <div>
-            <h2 className="text-lg font-semibold b-2 px-7 pt-5">
+            <h2 className="text-lg font-semibold mb-2 px-7 pt-5">
               Purchase summary
             </h2>
+            <hr />
           </div>
 
           {/* BODY */}
@@ -62,10 +63,10 @@ const CardPurchaseSummary = () => {
               </div>
             </div>
             {/* CHART */}
-            <ResponsiveContainer width="100%" height={200} className="p-2">
+            <ResponsiveContainer width="100%" height={190} className="px-7">
               <AreaChart
                 data={purchaseData}
-                margin={{ top: 0, right: 0, left: -50, bottom: 45 }}
+                margin={{ top: 0, right: 0, left: -50, bottom: 100 }} //45 to 100
               >
                 <XAxis dataKey="date" tick={false} axisLine={false} />
                 <YAxis tickLine={false} tick={false} axisLine={false} />
