@@ -5,6 +5,8 @@ import { PlusCircleIcon, SearchIcon } from "lucide-react";
 import { useState } from "react";
 import Header from "@/app/(components)/Header";
 import Rating from "@/app/(components)/Rating";
+import UseAnimations from "react-useanimations";
+import alertOctagon from "react-useanimations/lib/alertOctagon";
 
 const Products = () => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -22,9 +24,15 @@ const Products = () => {
 
   if (isError || !products) {
     return (
-      <div className="text-center text-red-500 py-4">
-        Failed to fetch products
-      </div>
+      <div className="flex items-center justify-center text-red-500 py-4">
+      <UseAnimations
+        animation={alertOctagon}
+        strokeColor="red"
+        size={56}
+        wrapperStyle={{ marginRight: '8px' }} // Adds spacing between icon and text
+      />
+      <span>Failed to fetch products <br/> server may be offline</span>
+    </div>
     );
   }
 
@@ -56,7 +64,7 @@ const Products = () => {
       </div>
 
       {/* BODY PRODUCTS LIST */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg-grid-cols-3 gap-10 justify-between">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 justify-between">
         {isLoading ? (
           <div>Loading...</div>
         ) : (
@@ -77,10 +85,8 @@ const Products = () => {
                 {product.rating && (
                   <div className="flex items-center mt-2">
                     <Rating rating={product.rating} />
-                    </div>
-                )
-
-                }
+                  </div>
+                )}
               </div>
             </div>
           ))
