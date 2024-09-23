@@ -41,13 +41,21 @@ const CreateProductModal = ({
       <div className="relative top-20 mx-auto p-5 border w-96 shadow-lg rounded-md bg-white">
         <Header name="Create New Product" />
         <form onSubmit={handleSubmit}>
-            <label htmlFor="productName" className="block text-sm font-medium text-gray-700">
-                Product Name
-            </label>
-            <input type="text" name="name" placeholder="Name"
+          <label
+            htmlFor="productName"
+            className="block text-sm font-medium text-gray-700"
+          >
+            Product Name
+          </label>
+          <input
+            type="text"
+            name="name"
+            placeholder="Name"
             onChange={handleChange}
             value={formData.name}
-            />
+            className="block w-full mb-2 p-2 border-2 rounded-md"
+            required
+          />
         </form>
       </div>
     </div>
