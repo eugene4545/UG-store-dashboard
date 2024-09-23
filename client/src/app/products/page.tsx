@@ -25,14 +25,14 @@ const Products = () => {
   if (isError || !products) {
     return (
       <div className="flex items-center justify-center text-red-500 py-4">
-      <UseAnimations
-        animation={alertOctagon}
-        strokeColor="red"
-        size={36}
-        wrapperStyle={{ marginRight: '8px' }} // Adds spacing between icon and text
-      />
-      <span>Failed to fetch products</span>
-    </div>
+        <UseAnimations
+          animation={alertOctagon}
+          strokeColor="red"
+          size={36}
+          wrapperStyle={{ marginRight: "8px" }} // Adds spacing between icon and text
+        />
+        <span>Failed to fetch products</span>
+      </div>
     );
   }
 
@@ -92,7 +92,9 @@ const Products = () => {
           ))
         )}
       </div>
-    </div>
+
+      {/* MODAL */}
+    </div> 
   );
 };
 
