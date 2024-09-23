@@ -15,7 +15,6 @@ const CardSalesSummary = () => {
   const { data, isLoading, isError } = useGetDashboardMetricsQuery();
   const salesData = data?.salesSummary || [];
 
-  console.log("Sales Data:", salesData); // Log to see the data structure
 
   const [timeframe, setTimeframe] = useState("weekly");
 
@@ -39,8 +38,30 @@ const CardSalesSummary = () => {
       })
     : "N/A";
 
-  if (isError) {
-    return <div className="m-5">Failed to fetch data</div>;
+  if (isError || !data) {
+    return (
+      <div className="row-span-3 xl:row-span-6 bg-white shadow-md rounded-2xl flex flex-col justify-between">
+         <div>
+            <h2 className="text-lg font-semibold mb-2 px-7 pt-5">
+              Sales Summary
+            </h2>
+            <hr />
+          </div>
+        <div className="m-5">
+          Failed to fetch data
+          </div>
+          <div>
+            <hr />
+            <div className="flex justify-between items-center mt-6 text-sm px-7 mb-4">
+              <p>{salesData.length || 0} days</p>
+              <p className="text-sm">
+                Highest Sales Date:
+                <span className="font-bold"> {highestValueDate}</span>
+              </p>
+            </div>
+          </div>
+        </div>
+      )
   }
 
   return (

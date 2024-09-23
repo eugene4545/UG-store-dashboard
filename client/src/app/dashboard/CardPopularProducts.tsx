@@ -2,16 +2,42 @@ import { useGetDashboardMetricsQuery } from "@/state/api";
 import { ShoppingBag } from "lucide-react";
 import React from "react";
 import Rating from "../(components)/Rating";
+import UseAnimations from "react-useanimations";
+import activity from "react-useanimations/lib/activity";
 
 const CardPopularProducts = () => {
-  const { data: dashboardMetrics, isLoading } = useGetDashboardMetricsQuery();
+  const { data: dashboardMetrics, isLoading, isError } = useGetDashboardMetricsQuery();
+   
+  if(isLoading)  {
+   return <div className="m-5">Loading...</div>
+  }  
+
+  if (isError || !dashboardMetrics ) {
+    return (
+      <div className="row-span-3 xl:row-span-6 bg-white shadow-md rounded-2xl pb-16">
+         <h3 className="text-lg font-semibold px-7 pt-5 pb-2">
+            Popular Products
+          </h3>
+          <hr />
+          <div className="flex items-center justify-center h-full py-4">
+        <div className="flex flex-col items-center justify-center">
+          <UseAnimations
+            animation={activity}
+            strokeColor="red"
+            size={36}
+            wrapperStyle={{ marginBottom: '8px' }} // Adds spacing between icon and text
+          />
+          <span className="text-red-300 font-semibold text-lg">No Data</span>
+        </div>
+      </div>
+    </div>
+
+    )
+  }
 
   return (
     <div className="row-span-3 xl:row-span-6 bg-white shadow-md rounded-2xl pb-16">
-      {isLoading ? (
-        <div className="m-5">Loading...</div>
-      ) : (
-        <>
+     
           <h3 className="text-lg font-semibold px-7 pt-5 pb-2">
             Popular Products
           </h3>
@@ -47,8 +73,6 @@ const CardPopularProducts = () => {
               </div>
             ))}
           </div>
-        </>
-      )}
     </div>
   );
 };
