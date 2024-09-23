@@ -28,10 +28,10 @@ const Products = () => {
       <UseAnimations
         animation={alertOctagon}
         strokeColor="red"
-        size={56}
+        size={36}
         wrapperStyle={{ marginRight: '8px' }} // Adds spacing between icon and text
       />
-      <span>Failed to fetch products <br/> server may be offline</span>
+      <span>Failed to fetch products</span>
     </div>
     );
   }
