@@ -10,6 +10,8 @@ import {
   XAxis,
   YAxis,
 } from "recharts";
+import UseAnimations from "react-useanimations";
+import activity from "react-useanimations/lib/activity";
 
 const CardSalesSummary = () => {
   const { data, isLoading, isError } = useGetDashboardMetricsQuery();
@@ -38,6 +40,10 @@ const CardSalesSummary = () => {
       })
     : "N/A";
 
+    if (isLoading) {
+      return <div className="m-5">Loading...</div>
+    }
+
   if (isError || !data) {
     return (
       <div className="row-span-3 xl:row-span-6 bg-white shadow-md rounded-2xl flex flex-col justify-between">
@@ -47,9 +53,17 @@ const CardSalesSummary = () => {
             </h2>
             <hr />
           </div>
-        <div className="m-5">
-          Failed to fetch data
-          </div>
+          <div className="flex items-center justify-center h-full py-4">
+        <div className="flex flex-col items-center justify-center">
+          <UseAnimations
+            animation={activity}
+            strokeColor="red"
+            size={36}
+            wrapperStyle={{ marginBottom: '8px' }} // Adds spacing between icon and text
+          />
+          <span className="text-red-400 font-semibold text-lg">No Data</span>
+        </div>
+      </div>
           <div>
             <hr />
             <div className="flex justify-between items-center mt-6 text-sm px-7 mb-4">
@@ -66,10 +80,7 @@ const CardSalesSummary = () => {
 
   return (
     <div className="row-span-3 xl:row-span-6 bg-white shadow-md rounded-2xl flex flex-col justify-between">
-      {isLoading ? (
-        <div className="m-5">Loading...</div>
-      ) : (
-        <>
+  
           {/* HEADER */}
           <div>
             <h2 className="text-lg font-semibold mb-2 px-7 pt-5">
@@ -155,8 +166,6 @@ const CardSalesSummary = () => {
               </p>
             </div>
           </div>
-        </>
-      )}
     </div>
   );
 };

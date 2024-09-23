@@ -25,7 +25,7 @@ const CardPopularProducts = () => {
             animation={activity}
             strokeColor="red"
             size={36}
-            wrapperStyle={{ marginBottom: '8px' }} // Adds spacing between icon and text
+            wrapperStyle={{ marginBottom: '8px' }}
           />
           <span className="text-red-300 font-semibold text-lg">No Data</span>
         </div>
