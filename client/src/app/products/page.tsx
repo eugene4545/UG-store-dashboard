@@ -113,7 +113,7 @@ const Products = () => {
         onCreate={handleCreateProduct}
       />
     </div>
-  );
+  ); 
 };
 
 export default Products;
