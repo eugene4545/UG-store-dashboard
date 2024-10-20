@@ -33,6 +33,12 @@ app.listen(port, () => {
   console.log(`Server running on port ${port}`);
 });
 
+/* *ROOT ROUTE* */
+app.get("/", (req, res) => {
+  res.send("Server is running!");
+});
+
+
 console.log("Environment Variables Loaded:");
 console.log("DATABASE_URL:", process.env.DATABASE_URL);
 
