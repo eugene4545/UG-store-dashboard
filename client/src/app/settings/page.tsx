@@ -42,7 +42,7 @@ const Settings = () => {
           <thead className="bg-gray-800 text-white">
             <tr>
               <th className="text-left py-3 px-4 uppercase font-semibold text-sm">
-                Setting
+                Settings
               </th>
               <th className="text-left py-3 px-4 uppercase font-semibold text-sm">
                 Value
@@ -51,7 +51,7 @@ const Settings = () => {
           </thead>
           <tbody>
             {userSettings.map((setting, index) => (
-              <tr className="hover:bg-blue-50" key={setting.label}>
+              <tr className="hover:bg-gray-100" key={setting.label}>
                 <td className="py-2 px-4">{setting.label}</td>
                 <td className="py-2 px-4">
                   {setting.type === "toggle" ? (
@@ -63,10 +63,10 @@ const Settings = () => {
                         onChange={() => handleToggleChange(index)}
                       />
                       <div
-                        className="w-11 h-6 bg-gray-200 rounded-full peer peer-focus:ring-blue-400 peer-focus:ring-4
+                        className="w-11 h-6 bg-gray-200 rounded-full peer peer-focus:ring-blue-400 peer-focus:ring-color-transparent
                       transition peer-checked:after:translate-x-full peer-checked:after:border-white
                       after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white
-                      after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-blue-600"
+                      after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-green-400"
                       ></div>
                     </label>
                   ) : (
