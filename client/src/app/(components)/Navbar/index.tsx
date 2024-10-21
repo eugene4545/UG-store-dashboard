@@ -130,8 +130,8 @@ const Navbar = () => {
 
       {/* RIGHT SIDE */}
       <div className="flex justify-between items-center gap-5">
-        {/* Dark Mode Toggle Button */}
-        <button onClick={toggleDarkMode} className="mr-3">
+        {/* Dark Mode Toggle Button  (mr-3) */}
+        <button onClick={toggleDarkMode} className="ml-2">             
           {isDarkMode ? (
             <Moon className="cursor-pointer text-gray-500" size={24} />
           ) : (
