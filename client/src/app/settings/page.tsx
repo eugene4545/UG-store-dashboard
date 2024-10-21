@@ -1,6 +1,8 @@
 "use client";
 import React, { useState } from "react";
 import Header from "@/app/(components)/Header";
+import { useAppDispatch, useAppSelector } from "@/app/redux";
+import { setIsDarkMode } from "@/state";
 
 type UserSetting = {
   label: string;
@@ -17,11 +19,18 @@ const mockSettings: UserSetting[] = [
 ];
 
 const Settings = () => {
+  const dispatch = useAppDispatch();
+  const isDarkMode = useAppSelector((state) => state.global.isDarkMode);
   const [userSettings, setUserSettings] = useState<UserSetting[]>(mockSettings);
 
   const handleToggleChange = (index: number) => {
     const settingsCopy = [...userSettings];
-    settingsCopy[index].value = !settingsCopy[index].value as boolean;
+    if (userSettings[index].label === "Dark Mode") {
+      dispatch(setIsDarkMode(!isDarkMode));
+      settingsCopy[index].value = !isDarkMode;
+    } else {
+      settingsCopy[index].value = !settingsCopy[index].value as boolean;
+    }
     setUserSettings(settingsCopy);
   };
 
