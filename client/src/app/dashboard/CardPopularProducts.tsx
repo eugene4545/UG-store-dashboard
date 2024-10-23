@@ -4,12 +4,21 @@ import React from "react";
 import Rating from "../(components)/Rating";
 import UseAnimations from "react-useanimations";
 import activity from "react-useanimations/lib/activity";
+import loadingV4 from "react-useanimations/lib/loading2"
 
 const CardPopularProducts = () => {
   const { data: dashboardMetrics, isLoading, isError } = useGetDashboardMetricsQuery();
    
   if(isLoading)  {
-   return <div className="m-5">Loading...</div>
+   return <div className="m-5">
+     <UseAnimations
+            animation={loadingV4}
+            strokeColor="red"
+            size={36}
+            wrapperStyle={{ marginBottom: '8px' }}
+          />
+    <span>Loading...</span>
+    </div>
   }  
 
   if (isError || !dashboardMetrics ) {
