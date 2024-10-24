@@ -17,17 +17,18 @@ const Dashboard = () => {
 
   if (isLoading) {
     return (
-      <div className="flex flex-col items-center justify-center py-4">
+      <div className="flex flex-col items-center justify-center h-screen">
         <UseAnimations
           animation={loading}
-          strokeColor="black"
-          size={36}
+          strokeColor="green"
+          size={80}
           wrapperStyle={{ marginBottom: "8px" }}
         />
         <span>Loading</span>
       </div>
     );
   }
+  
 
   if (isError || !products) {
     return (
