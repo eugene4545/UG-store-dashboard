@@ -32,28 +32,34 @@ const Products = () => {
     await createProduct(productData);
   };
 
-  if(isLoading)  {
-    return <div className="m-5">
-      <UseAnimations
-             animation={loading}
-             strokeColor="red"
-             size={36}
-             wrapperStyle={{ marginBottom: '8px' }}
-           />
-     <span>Loading...</span>
-     </div>
-   }  
+  if (isLoading) {
+    return (
+      <div className="flex flex-col items-center justify-center py-4">
+        <UseAnimations
+          animation={loading}
+          strokeColor="black"
+          size={36}
+          wrapperStyle={{ marginBottom: "8px" }}
+        />
+        <span>Loading</span>
+      </div>
+    );
+  }
 
   if (isError || !products) {
     return (
       <div className="flex items-center justify-center text-red-500 py-4">
-        <UseAnimations
-          animation={alertOctagon}
-          strokeColor="red"
-          size={36}
-          wrapperStyle={{ marginRight: "8px" }} // Adds spacing between icon and text
-        />
-        <span>Failed to fetch products</span>
+         <div className="flex flex-col items-center justify-center">
+          <UseAnimations
+            animation={alertOctagon}
+            strokeColor="red"
+            size={36}
+            wrapperStyle={{ marginBottom: "8px" }}
+          />
+          <span className="text-red-500 text-lg">
+            Failed to fetch products
+          </span>
+        </div>
       </div>
     );
   }
