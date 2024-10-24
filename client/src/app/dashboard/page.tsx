@@ -8,7 +8,7 @@ import CardSalesSummary from "./CardSalesSummary";
 import StatCard from "./StatCard";
 import UseAnimations from "react-useanimations";
 import alertOctagon from "react-useanimations/lib/alertOctagon";
-import loading from "react-useanimations/lib/loading";
+import infinity from "react-useanimations/lib/infinity";
 import { useGetProductsQuery } from "@/state/api";
 
 
@@ -17,36 +17,18 @@ const Dashboard = () => {
 
   if (isLoading) {
     return (
-      <div className="flex flex-col items-center justify-center h-screen">
+      <div className="flex flex-col items-center justify-center py-4">
         <UseAnimations
-          animation={loading}
-          strokeColor="green"
-          size={80}
+          animation={infinity}
+          strokeColor="blue"
+          size={50}
           wrapperStyle={{ marginBottom: "8px" }}
         />
         <span>Loading</span>
       </div>
     );
   }
-  
 
-  if (isError || !products) {
-    return (
-      <div className=" flex items-center justify-center text-red-500 py-4">
-        <div className="flex flex-col items-center justify-center">
-          <UseAnimations
-            animation={alertOctagon}
-            strokeColor="red"
-            size={36}
-            wrapperStyle={{ marginBottom: "8px" }}
-          />
-          <span className="text-red-500 text-lg">
-            Failed to fetch products
-          </span>
-        </div>
-      </div>
-    );
-  }
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 xl:overflow-auto gap-10 pb-4 custom-grid-rows">
       <CardSalesSummary />
