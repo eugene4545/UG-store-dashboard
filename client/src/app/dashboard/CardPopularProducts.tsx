@@ -4,7 +4,7 @@ import React from "react";
 import Rating from "../(components)/Rating";
 import UseAnimations from "react-useanimations";
 import activity from "react-useanimations/lib/activity";
-import loadingV4 from "react-useanimations/lib/loading2"
+import loading from "react-useanimations/lib/loading"
 
 const CardPopularProducts = () => {
   const { data: dashboardMetrics, isLoading, isError } = useGetDashboardMetricsQuery();
@@ -12,7 +12,7 @@ const CardPopularProducts = () => {
   if(isLoading)  {
    return <div className="m-5">
      <UseAnimations
-            animation={loadingV4}
+            animation={loading}
             strokeColor="red"
             size={36}
             wrapperStyle={{ marginBottom: '8px' }}

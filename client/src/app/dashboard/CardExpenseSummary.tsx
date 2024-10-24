@@ -7,6 +7,7 @@ import React from "react";
 import { Cell, Pie, PieChart, ResponsiveContainer } from "recharts";
 import UseAnimations from "react-useanimations";
 import activity from "react-useanimations/lib/activity";
+import loading from "react-useanimations/lib/loading"
 
 type ExpenseSums = {
   [category: string]: number;
@@ -50,9 +51,17 @@ const CardExpenseSummary = () => {
   );
   const formattedTotalExpenses = totalExpenses.toFixed(2);
 
-  if (isLoading) {
-    return <div className="m-5">Loading...</div>;
-  }
+  if(isLoading)  {
+    return <div className="m-5">
+      <UseAnimations
+             animation={loading}
+             strokeColor="red"
+             size={36}
+             wrapperStyle={{ marginBottom: '8px' }}
+           />
+     <span>Loading...</span>
+     </div>
+   }  
 
   if (isError || !dashboardMetrics) {
    return ( <div className="row-span-3 bg-white shadow-md rounded-2xl flex flex-col justify-between -mt-4">

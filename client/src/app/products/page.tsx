@@ -7,6 +7,7 @@ import Header from "@/app/(components)/Header";
 import Rating from "@/app/(components)/Rating";
 import UseAnimations from "react-useanimations";
 import alertOctagon from "react-useanimations/lib/alertOctagon";
+import loading from "react-useanimations/lib/loading";
 import CreateProductModal from "./CreateProductModal";
 
 type ProductFormData = {
@@ -31,9 +32,17 @@ const Products = () => {
     await createProduct(productData);
   };
 
-  if (isLoading) {
-    return <div className="py-4">Loading...</div>;
-  }
+  if(isLoading)  {
+    return <div className="m-5">
+      <UseAnimations
+             animation={loading}
+             strokeColor="red"
+             size={36}
+             wrapperStyle={{ marginBottom: '8px' }}
+           />
+     <span>Loading...</span>
+     </div>
+   }  
 
   if (isError || !products) {
     return (

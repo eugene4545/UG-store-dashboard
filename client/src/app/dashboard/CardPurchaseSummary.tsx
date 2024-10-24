@@ -12,6 +12,7 @@ import {
 } from "recharts";
 import UseAnimations from "react-useanimations";
 import activity from "react-useanimations/lib/activity";
+import loading from "react-useanimations/lib/loading"
 
 const CardPurchaseSummary = () => {
   const { data, isLoading, isError } = useGetDashboardMetricsQuery();
@@ -19,9 +20,17 @@ const CardPurchaseSummary = () => {
 
   const lastDataPoint = purchaseData[purchaseData.length - 1] || null;
 
-  if (isLoading) {
-    return <div className="m-5">Loading...</div>;
-  }
+  if(isLoading)  {
+    return <div className="m-5">
+      <UseAnimations
+             animation={loading}
+             strokeColor="red"
+             size={36}
+             wrapperStyle={{ marginBottom: '8px' }}
+           />
+     <span>Loading...</span>
+     </div>
+   }  
 
   if (isError || !data) {
     return (
