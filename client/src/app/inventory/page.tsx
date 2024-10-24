@@ -5,6 +5,7 @@ import Header from "@/app/(components)/Header";
 import { DataGrid, GridColDef } from "@mui/x-data-grid";
 import UseAnimations from "react-useanimations";
 import alertOctagon from "react-useanimations/lib/alertOctagon";
+import loading from "react-useanimations/lib/loading";
 
 const columns: GridColDef[] = [
   { field: "productId", headerName: "ID", width: 90 },
@@ -35,19 +36,33 @@ const Inventory = () => {
   const { data: products, isError, isLoading } = useGetProductsQuery();
 
   if (isLoading) {
-    return <div className="py-4">Loading...</div>;
+    return (
+      <div className="flex flex-col items-center justify-center py-4">
+        <UseAnimations
+          animation={loading}
+          strokeColor="black"
+          size={36}
+          wrapperStyle={{ marginBottom: "8px" }}
+        />
+        <span>Loading</span>
+      </div>
+    );
   }
 
   if (isError || !products) {
     return (
       <div className=" flex items-center justify-center text-red-500 py-4">
-         <UseAnimations
-        animation={alertOctagon}
-        strokeColor="red"
-        size={36}
-        wrapperStyle={{ marginRight: '8px' }} // Adds spacing between icon and text
-      />
-      <span>Failed to fetch products</span>
+        <div className="flex flex-col items-center justify-center">
+          <UseAnimations
+            animation={alertOctagon}
+            strokeColor="red"
+            size={36}
+            wrapperStyle={{ marginBottom: "8px" }}
+          />
+          <span className="text-red-500 text-lg">
+            Failed to fetch products
+          </span>
+        </div>
       </div>
     );
   }
