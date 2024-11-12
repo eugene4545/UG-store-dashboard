@@ -117,16 +117,17 @@ const CardSalesSummary = () => {
                 </span>
               </div>
               <select
-                className="shadow-sm border border-gray-500 text-sm ml-2"
-                value={timeframe}
-                onChange={(e) => {
-                  setTimeframe(e.target.value);
-                }}
-              >
-                <option value="daily">Daily</option>
-                <option value="weekly">Weekly</option>
-                <option value="monthly">Monthly</option>
-              </select>
+  className="shadow-sm border border-gray-500 text-sm ml-2 bg-white text-black dark:bg-gray-800 dark:text-white dark:border-gray-400 focus:outline-none"
+  value={timeframe}
+  onChange={(e) => {
+    setTimeframe(e.target.value);
+  }}
+>
+  <option value="daily">Daily</option>
+  <option value="weekly">Weekly</option>
+  <option value="monthly">Monthly</option>
+</select>
+
             </div>
             {/* CHART */}
             <ResponsiveContainer width="100%" height={250} className="px-7">
