@@ -8,7 +8,7 @@ import CardSalesSummary from "./CardSalesSummary";
 import StatCard from "./StatCard";
 import UseAnimations from "react-useanimations";
 import alertOctagon from "react-useanimations/lib/alertOctagon";
-import infinity from "react-useanimations/lib/infinity";
+import loading from "react-useanimations/lib/loading";
 import { useGetProductsQuery } from "@/state/api";
 
 
@@ -19,7 +19,7 @@ const Dashboard = () => {
     return (
       <div className="flex flex-col items-center justify-center py-4">
         <UseAnimations
-          animation={infinity}
+          animation={loading}
           strokeColor="blue"
           size={50}
           wrapperStyle={{ marginBottom: "8px" }}
