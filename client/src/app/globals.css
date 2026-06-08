@@ -19,6 +19,27 @@ body,
   @apply text-gray-900;
 }
 
+/* Midnight Obsidian theme */
+.dark body,
+.dark #root,
+.dark .app {
+  background-color: #0c0e12;
+  color: #e1e2e7;
+}
+
+@layer utilities {
+  .glass-surface {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .tracking-header {
+    letter-spacing: 0.05em;
+  }
+}
+
 @media (min-width: 768px) {
   .custom-grid-rows {
     grid-template-rows: repeat(8, 20vh);

@@ -68,6 +68,27 @@ const config: Config = {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
+      colors: {
+        brand: {
+          DEFAULT: "#4f46e5",
+          indigo: "#4f46e5",
+        },
+        mint: "#4edea3",
+        "rose-gold": "#ffb2b9",
+        obsidian: {
+          DEFAULT: "#0c0e12",
+          base: "#05070a",
+          charcoal: "#111417",
+          dim: "#191c1f",
+          surface: "#1d2023",
+          high: "#282a2e",
+          highest: "#323539",
+          glass: "rgba(29, 32, 35, 0.6)",
+        },
+      },
+      borderRadius: {
+        custom: "12px",
+      },
     },
   },
   plugins: [createThemes(themes)],

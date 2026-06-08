@@ -58,11 +58,11 @@ const CardPopularProducts = () => {
 
   if (isError || !dashboardMetrics ) {
     return (
-      <div className="row-span-3 xl:row-span-6 bg-white shadow-md rounded-2xl pb-16">
-         <h3 className="text-lg font-semibold px-7 pt-5 pb-2">
+      <div className="row-span-3 xl:row-span-6 bg-white dark:glass-surface dark:bg-obsidian-charcoal/60 shadow-md dark:shadow-none rounded-2xl dark:rounded-custom pb-16">
+         <h3 className="text-lg font-semibold px-7 pt-5 pb-2 dark:text-white/90">
             Popular Products
           </h3>
-          <hr />
+          <hr className="dark:border-white/5" />
           <div className="flex items-center justify-center h-full py-4">
         <div className="flex flex-col items-center justify-center">
           <UseAnimations
@@ -80,17 +80,17 @@ const CardPopularProducts = () => {
   }
 
   return (
-    <div className="row-span-3 xl:row-span-6 bg-white shadow-md rounded-2xl pb-16">
+    <div className="row-span-3 xl:row-span-6 bg-white dark:glass-surface dark:bg-obsidian-charcoal/60 shadow-md dark:shadow-none rounded-2xl dark:rounded-custom pb-16">
      
-          <h3 className="text-lg font-semibold px-7 pt-5 pb-2">
+          <h3 className="text-lg font-semibold px-7 pt-5 pb-2 dark:text-white/90 dark:tracking-header dark:uppercase dark:text-base">
             Popular Products
           </h3>
-          <hr />
+          <hr className="dark:border-white/5" />
           <div className="overflow-auto h-full">
             {dashboardMetrics?.popularProducts.map((product) => (
               <div
                 key={product.productId}
-                className="flex items-center justify-between gap-3 px-5 py-7 border-b"
+                className="flex items-center justify-between gap-3 px-5 py-7 border-b dark:border-white/5 dark:hover:bg-white/[0.04] transition-colors"
               >
                 <div className="flex items-center gap-3">
                 <Image
@@ -98,24 +98,24 @@ const CardPopularProducts = () => {
                   alt={product.name}
                   width={48}
                   height={48}
-                  className="rounded-md w-12 h-12 object-cover"
+                  className="rounded-md w-12 h-12 object-cover dark:border dark:border-white/10"
                 />
                 <div className="flex flex-col justify-between gap-1">
-                    <div className="font-bold text-gray-700">
+                    <div className="font-bold text-gray-700 dark:text-slate-100">
                         {product.name}
                     </div>
                     <div className="flex text-sm items-center">
-                        <span className="font-bold text-blue-500 text-xs">
+                        <span className="font-bold text-blue-500 dark:text-mint text-xs">
                             ${product.price}
                         </span>
-                        <span className="mx-2">|</span>
+                        <span className="mx-2 dark:text-slate-600">|</span>
                         <Rating rating={product.rating || 0} />
                     </div>
                 </div>
                 </div>
 
-                <div className="text-xs flex items-center">
-                    <button className="p-2 rounded-full bg-blue-100 text-blue-600 mr-2">
+                <div className="text-xs flex items-center dark:text-slate-400">
+                    <button className="p-2 rounded-full bg-blue-100 text-blue-600 dark:bg-brand-indigo/15 dark:text-brand-indigo mr-2 transition-colors">
                         <ShoppingBag className="w-4 h-4" />
                     </button>
                     {Math.round(product.stockQuantity / 1000)}k Sold

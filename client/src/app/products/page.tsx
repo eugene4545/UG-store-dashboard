@@ -103,10 +103,10 @@ const Products = () => {
     <div className="mx-auto pb-5 w-full">
       {/* SEARCH BAR */}
       <div className="mb-6">
-        <div className="flex items-center border-2 border-gray-200 rounded">
-          <SearchIcon className="w-5 h-5 text-gray-500 m-2" />
+        <div className="flex items-center border-2 border-gray-200 dark:border-0 dark:bg-white/5 dark:ring-1 dark:ring-inset dark:ring-white/10 focus-within:dark:ring-2 focus-within:dark:ring-brand-indigo rounded dark:rounded-custom transition-all">
+          <SearchIcon className="w-5 h-5 text-gray-500 dark:text-slate-500 m-2" />
           <input
-            className="w-full py-2 px-4 rounded bg-white"
+            className="w-full py-2 px-4 rounded dark:rounded-custom bg-white dark:bg-transparent dark:text-slate-200 dark:placeholder-slate-500 focus:outline-none"
             placeholder="Search products..."
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
@@ -118,10 +118,10 @@ const Products = () => {
       <div className="flex justify-between items-center mb-6">
         <Header name="Products" />
         <button
-          className="flex items-center bg-blue-500 hover:bg-blue-700 text-gray-200 font-bold py-2 px-4 rounded"
+          className="flex items-center bg-blue-500 hover:bg-blue-700 dark:bg-brand-indigo dark:hover:opacity-90 dark:shadow-lg dark:shadow-indigo-500/20 text-gray-200 dark:text-white font-bold py-2 px-4 rounded dark:rounded-custom transition-all"
           onClick={() => setIsModalOpen(true)}
         >
-          <PlusCircleIcon className="w-5 h-5 mr-2 !text-gray-200" /> Create
+          <PlusCircleIcon className="w-5 h-5 mr-2 !text-gray-200 dark:!text-white" /> Create
           Product
         </button>
       </div>
@@ -134,7 +134,8 @@ const Products = () => {
           products?.map((product) => (
             <div
               key={product.productId}
-              className="border shadow rounded-md p-4 max-w-full w-full mx-auto"
+              className="border shadow rounded-md p-4 max-w-full w-full mx-auto
+              dark:border-0 dark:glass-surface dark:bg-obsidian-charcoal/60 dark:shadow-none dark:rounded-custom dark:hover:bg-white/[0.04] transition-colors"
             >
               <div className="flex flex-col items-center">
                 <Image
@@ -142,13 +143,13 @@ const Products = () => {
                   alt={product.name}
                   width={100}
                   height={100}
-                  className="rounded-md w-24 h-24 object-cover mb-3"
+                  className="rounded-md w-24 h-24 object-cover mb-3 dark:border dark:border-white/10"
                 />
-                <h3 className="text-lg text-gray-900 font-semibold">
+                <h3 className="text-lg text-gray-900 dark:text-slate-100 font-semibold">
                   {product.name}
                 </h3>
-                <p className="text-gray-800">${product.price.toFixed(2)}</p>
-                <div className="text-sm text-gray-600 mt-1">
+                <p className="text-gray-800 dark:text-mint dark:font-semibold">${product.price.toFixed(2)}</p>
+                <div className="text-sm text-gray-600 dark:text-slate-500 mt-1">
                   Stock: {product.stockQuantity}
                 </div>
                 {product.rating && (
