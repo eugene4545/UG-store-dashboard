@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import DashboardWrapper from "./dashboardWrapper";
+import SessionWrapper from "./(components)/SessionWrapper";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -24,8 +25,10 @@ export default function RootLayout({
         <link rel="icon" href="/picsvg_download.svg" type="image/svg+xml" />
       </head>
       <body className={inter.className}>
-        <DashboardWrapper>{children}</DashboardWrapper>
-        </body>
+        <SessionWrapper>
+          <DashboardWrapper>{children}</DashboardWrapper>
+        </SessionWrapper>
+      </body>
     </html>
   );
 }

@@ -84,20 +84,19 @@
 
 "use client";
 import React from "react";
-import { Bell, Menu, Moon, Settings, Sun } from "lucide-react";
+import { Bell, LogOut, Menu, Moon, Settings, Sun } from "lucide-react";
 import Link from "next/link";
 import { useAppDispatch, useAppSelector } from "@/app/redux";
 import { setIsDarkMode, setIsSidebarCollapsed } from "@/state";
-import Image from "next/image"
-import profile from '@/app/akum.jpg'
+import { useSession, signOut } from "next-auth/react";
 
 const Navbar = () => {
   const dispatch = useAppDispatch();
   const isSidebarCollapsed = useAppSelector(
     (state) => state.global.isSidebarCollapsed
   );
-
   const isDarkMode = useAppSelector((state) => state.global.isDarkMode);
+  const { data: session } = useSession();
 
   const toggleSidebar = () => {
     dispatch(setIsSidebarCollapsed(!isSidebarCollapsed));
@@ -148,11 +147,21 @@ const Navbar = () => {
                  </span>
              </div>
              <hr className="w-0 h-7 border border-solid border-1 border-gray-300 dark:border-white/10 mx-3 hidden md:block"/>
-             <div className="flex items-center gap-3 cursor-pointer hidden md:flex">
-              <div className="w-9 h-9 rounded-full overflow-hidden border border-transparent dark:border-white/10">
-              <Image src={profile} alt="logo" width={40} height={40} />
-               </div><span className="font-semibold dark:text-white/80">Akum</span>
+             <div className="hidden md:flex items-center gap-3">
+              <div className="w-9 h-9 rounded-full bg-emerald-500 flex items-center justify-center text-white font-bold text-sm">
+                {session?.user?.name?.charAt(0) ?? "E"}
+              </div>
+              <span className="font-semibold dark:text-white/80 text-sm">
+                {session?.user?.name ?? "Eugene"}
+              </span>
             </div>
+            <button
+              onClick={() => signOut({ callbackUrl: "/login" })}
+              title="Sign out"
+              className="hidden md:flex items-center gap-1 px-3 py-2 rounded-lg text-sm text-gray-500 dark:text-slate-400 hover:text-red-500 dark:hover:text-red-400 hover:bg-red-50 dark:hover:bg-red-500/10 transition-colors"
+            >
+              <LogOut className="w-4 h-4" />
+            </button>
         {/* Settings Button */}
         <Link href="/settings">
           <Settings className="cursor-pointer text-gray-500 dark:text-slate-400 dark:hover:text-white transition-colors" size={24} />
