@@ -105,7 +105,7 @@ const CardPopularProducts = () => {
                         {product.name}
                     </div>
                     <div className="flex text-sm items-center">
-                        <span className="font-bold text-blue-500 dark:text-mint text-xs">
+                        <span className="font-bold text-emerald-600 dark:text-mint text-xs">
                             ${product.price}
                         </span>
                         <span className="mx-2 dark:text-slate-600">|</span>
@@ -115,7 +115,7 @@ const CardPopularProducts = () => {
                 </div>
 
                 <div className="text-xs flex items-center dark:text-slate-400">
-                    <button className="p-2 rounded-full bg-blue-100 text-blue-600 dark:bg-brand-indigo/15 dark:text-brand-indigo mr-2 transition-colors">
+                    <button className="p-2 rounded-full bg-emerald-100 text-emerald-600 dark:bg-brand-indigo/15 dark:text-brand-indigo mr-2 transition-colors">
                         <ShoppingBag className="w-4 h-4" />
                     </button>
                     {Math.round(product.stockQuantity / 1000)}k Sold

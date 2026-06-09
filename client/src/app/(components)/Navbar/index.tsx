@@ -112,7 +112,7 @@ const Navbar = () => {
       {/* LEFT SIDE */}
       <div className="flex justify-between items-center gap-5">
         <button
-          className="px-3 py-3 bg-gray-100 dark:bg-white/5 dark:text-slate-300 rounded-full hover:bg-blue-100 dark:hover:bg-white/10 transition-colors"
+          className="px-3 py-3 bg-gray-100 dark:bg-white/5 dark:text-slate-300 rounded-full hover:bg-emerald-100 dark:hover:bg-white/10 transition-colors"
           onClick={toggleSidebar}
         >
           <Menu className="w-4 h-4" />
@@ -122,7 +122,7 @@ const Navbar = () => {
           <input
             type="search"
             placeholder="Start typing to search groups & products"
-            className="pl-10 pr-4 py-2 w-50 md:w-60 border-2 border-gray-300 bg-white rounded-lg focus:outline-none focus:border-blue-500
+            className="pl-10 pr-4 py-2 w-50 md:w-60 border-2 border-gray-300 bg-white rounded-lg focus:outline-none focus:border-emerald-500
             dark:border-0 dark:bg-white/5 dark:text-slate-200 dark:placeholder-slate-500 dark:ring-1 dark:ring-inset dark:ring-white/10 dark:focus:ring-2 dark:focus:ring-brand-indigo dark:rounded-custom transition-all"
           />
           <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">

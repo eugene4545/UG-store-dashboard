@@ -35,10 +35,10 @@ const SidebarLink = ({
           isCollapsed ? "justify-center py-4" : "justify-start px-8 py-4"
         }
         gap-3 transition-colors rounded-custom mx-3
-        text-gray-700 hover:text-blue-500 hover:bg-blue-100
+        text-gray-700 hover:text-emerald-600 hover:bg-emerald-50
         dark:text-slate-400 dark:hover:text-white dark:hover:bg-white/5 ${
           isActive
-            ? "bg-blue-200 text-white dark:bg-brand-indigo/15 dark:text-brand-indigo"
+            ? "bg-emerald-100 text-emerald-700 dark:bg-brand-indigo/15 dark:text-brand-indigo"
             : ""
         }`}
       >
