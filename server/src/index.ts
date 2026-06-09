@@ -50,6 +50,41 @@ app.get("/", (req, res) => {
   res.send("Server is running!");
 });
 
+/* TEMP SEED ROUTE — remove after use */
+app.get("/run-seed", async (req, res) => {
+  try {
+    const fs = await import("fs");
+    const path = await import("path");
+
+    const dataDirectory = path.join(process.cwd(), "prisma", "seedData");
+    const orderedFileNames = [
+      "products.json","expenseSummary.json","sales.json","salesSummary.json",
+      "purchases.json","purchaseSummary.json","users.json","expenses.json","expenseByCategory.json",
+    ];
+
+    // clear
+    for (const fileName of [...orderedFileNames].reverse()) {
+      const modelName = path.basename(fileName, ".json");
+      const model: any = (prisma as any)[modelName];
+      if (model) await model.deleteMany({});
+    }
+
+    // seed
+    for (const fileName of orderedFileNames) {
+      const filePath = path.join(dataDirectory, fileName);
+      const jsonData = JSON.parse(fs.readFileSync(filePath, "utf-8"));
+      const modelName = path.basename(fileName, ".json");
+      const model: any = (prisma as any)[modelName];
+      if (!model) continue;
+      for (const data of jsonData) await model.create({ data });
+    }
+
+    res.json({ success: true, message: "Database seeded successfully!" });
+  } catch (err: any) {
+    res.status(500).json({ success: false, error: err.message });
+  }
+});
+
 
 console.log("Environment Variables Loaded:");
 console.log("DATABASE_URL:", process.env.DATABASE_URL);
