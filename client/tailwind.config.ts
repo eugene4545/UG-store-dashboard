@@ -70,10 +70,10 @@ const config: Config = {
       },
       colors: {
         brand: {
-          DEFAULT: "#4f46e5",
-          indigo: "#4f46e5",
+          DEFAULT: "#10b981",
+          indigo: "#10b981",
         },
-        mint: "#4edea3",
+        mint: "#10b981",
         "rose-gold": "#ffb2b9",
         obsidian: {
           DEFAULT: "#0c0e12",

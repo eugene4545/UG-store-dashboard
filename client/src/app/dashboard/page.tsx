@@ -38,58 +38,58 @@ const Dashboard = () => {
       <CardPurchaseSummary />
       <CardExpenseSummary />
       <StatCard
-        title="Customer & Expenses"
-        primaryIcon={<Package className="text-blue-600 w-6 h-6" />}
-        dateRange="22-29 October 2023"
+        title="Customers & Returns"
+        primaryIcon={<Package className="text-emerald-600 w-6 h-6" />}
+        dateRange="2–8 Jun 2025"
         details={[
           {
-            title: "Customer Growth",
-            amount: "175.00",
-            changePercentage: 131,
+            title: "New Customers",
+            amount: "348",
+            changePercentage: 22,
             IconComponent: TrendingUp,
           },
           {
-            title: "Expenses",
-            amount: "10.00",
-            changePercentage: -56,
+            title: "Return Rate",
+            amount: "4.2%",
+            changePercentage: -8,
             IconComponent: TrendingDown,
           },
         ]}
       />
       <StatCard
-        title="Dues & Pending Orders"
-        primaryIcon={<CheckCircle className="text-blue-600 w-6 h-6" />}
-        dateRange="22-29 October 2023"
+        title="Fulfilment & Backorders"
+        primaryIcon={<CheckCircle className="text-emerald-600 w-6 h-6" />}
+        dateRange="2–8 Jun 2025"
         details={[
           {
-            title: "Dues",
-            amount: "250.00",
-            changePercentage: 131,
+            title: "Shipped Today",
+            amount: "214",
+            changePercentage: 18,
             IconComponent: TrendingUp,
           },
           {
-            title: "Pending Orders",
-            amount: "147",
-            changePercentage: -56,
+            title: "Backorders",
+            amount: "37",
+            changePercentage: -31,
             IconComponent: TrendingDown,
           },
         ]}
-      /> 
+      />
       <StatCard
-        title="Sales & Discount"
-        primaryIcon={<Tag className="text-blue-600 w-6 h-6" />}
-        dateRange="22-29 October 2023"
+        title="Revenue & Discounts"
+        primaryIcon={<Tag className="text-emerald-600 w-6 h-6" />}
+        dateRange="2–8 Jun 2025"
         details={[
           {
-            title: "Sales",
-            amount: "1000.00",
-            changePercentage: 20,
+            title: "Weekly Revenue",
+            amount: "$28,450",
+            changePercentage: 14,
             IconComponent: TrendingUp,
           },
           {
-            title: "Discount",
-            amount: "200.00",
-            changePercentage: -10,
+            title: "Promo Spend",
+            amount: "$3,200",
+            changePercentage: -5,
             IconComponent: TrendingDown,
           },
         ]}

@@ -42,7 +42,7 @@ const StatCard = ({
 
       {/* BODY */}
       <div className="flex mb-6 items-center justify-around gap-4 px-5">
-        <div className="rounded-full p-5 bg-blue-50 border-sky-300 border-[1px]">
+        <div className="rounded-full p-5 bg-emerald-50 border-emerald-300 border-[1px]">
           {primaryIcon}
         </div>
         <div className="flex-1">
