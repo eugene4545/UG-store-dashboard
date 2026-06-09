@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 export const dynamic = 'force-dynamic';
 
@@ -8,7 +8,7 @@ import { useState } from "react";
 import Image from "next/image";
 import Header from "@/app/(components)/Header";
 import Rating from "@/app/(components)/Rating";
-import UseAnimations from "react-useanimations";
+import UseAnimations from "@/app/(components)/DynamicAnimation";
 import alertOctagon from "react-useanimations/lib/alertOctagon";
 import loading from "react-useanimations/lib/loading";
 import CreateProductModal from "./CreateProductModal";
@@ -176,3 +176,4 @@ const Products = () => {
 };
 
 export default Products;
+

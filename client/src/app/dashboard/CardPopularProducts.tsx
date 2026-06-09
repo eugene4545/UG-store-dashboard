@@ -1,8 +1,8 @@
-import { useGetDashboardMetricsQuery } from "@/state/api";
+﻿import { useGetDashboardMetricsQuery } from "@/state/api";
 import { ShoppingBag } from "lucide-react";
 import React from "react";
 import Rating from "../(components)/Rating";
-import UseAnimations from "react-useanimations";
+import UseAnimations from "@/app/(components)/DynamicAnimation";
 import activity from "react-useanimations/lib/activity";
 import loading from "react-useanimations/lib/loading"
 import Image from "next/image";
@@ -128,3 +128,4 @@ const CardPopularProducts = () => {
 };
 
 export default CardPopularProducts;
+

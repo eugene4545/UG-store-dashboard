@@ -1,4 +1,4 @@
-import { useGetDashboardMetricsQuery } from "@/state/api";
+﻿import { useGetDashboardMetricsQuery } from "@/state/api";
 import { TrendingDown, TrendingUp } from "lucide-react";
 import numeral from "numeral";
 import React from "react";
@@ -10,7 +10,7 @@ import {
   XAxis,
   YAxis,
 } from "recharts";
-import UseAnimations from "react-useanimations";
+import UseAnimations from "@/app/(components)/DynamicAnimation";
 import activity from "react-useanimations/lib/activity";
 import loading from "react-useanimations/lib/loading"
 
@@ -130,3 +130,4 @@ const CardPurchaseSummary = () => {
 };
 
 export default CardPurchaseSummary;
+

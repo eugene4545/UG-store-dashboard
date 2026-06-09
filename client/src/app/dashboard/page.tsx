@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 export const dynamic = 'force-dynamic';
 
@@ -8,7 +8,7 @@ import CardPopularProducts from "./CardPopularProducts";
 import CardPurchaseSummary from "./CardPurchaseSummary";
 import CardSalesSummary from "./CardSalesSummary";
 import StatCard from "./StatCard";
-import UseAnimations from "react-useanimations";
+import UseAnimations from "@/app/(components)/DynamicAnimation";
 import alertOctagon from "react-useanimations/lib/alertOctagon";
 import loading from "react-useanimations/lib/loading";
 import { useGetProductsQuery } from "@/state/api";
@@ -99,3 +99,4 @@ const Dashboard = () => {
 };
 
 export default Dashboard;
+

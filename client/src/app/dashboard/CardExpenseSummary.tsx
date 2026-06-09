@@ -1,11 +1,11 @@
-import {
+﻿import {
   ExpenseByCategorySummary,
   useGetDashboardMetricsQuery,
 } from "@/state/api";
 import { TrendingUp } from "lucide-react";
 import React from "react";
 import { Cell, Pie, PieChart, ResponsiveContainer } from "recharts";
-import UseAnimations from "react-useanimations";
+import UseAnimations from "@/app/(components)/DynamicAnimation";
 import activity from "react-useanimations/lib/activity";
 import loading from "react-useanimations/lib/loading"
 
@@ -162,3 +162,4 @@ const CardExpenseSummary = () => {
 };
 
 export default CardExpenseSummary;
+

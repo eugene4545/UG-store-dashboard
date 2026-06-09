@@ -1,11 +1,11 @@
-"use client";
+﻿"use client";
 
 export const dynamic = 'force-dynamic';
 
 import { useGetProductsQuery } from "@/state/api";
 import Header from "@/app/(components)/Header";
 import { DataGrid, GridColDef } from "@mui/x-data-grid";
-import UseAnimations from "react-useanimations";
+import UseAnimations from "@/app/(components)/DynamicAnimation";
 import alertOctagon from "react-useanimations/lib/alertOctagon";
 import loading from "react-useanimations/lib/loading";
 
@@ -84,3 +84,4 @@ const Inventory = () => {
 };
 
 export default Inventory;
+

@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 export const dynamic = 'force-dynamic';
 
@@ -7,7 +7,7 @@ import {
   useGetExpensesByCategoryQuery,
 } from "@/state/api";
 import { useMemo, useState } from "react";
-import UseAnimations from "react-useanimations";
+import UseAnimations from "@/app/(components)/DynamicAnimation";
 import alertOctagon from "react-useanimations/lib/alertOctagon";
 import loading from "react-useanimations/lib/loading";
 import Header from "@/app/(components)/Header";
@@ -213,3 +213,4 @@ const Expenses = () => {
 };
 
 export default Expenses;
+
